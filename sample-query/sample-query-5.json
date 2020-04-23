@@ -1,0 +1,3 @@
+{
+    "query": "MATCH (neo:Database {name:'Neo4j'}) MATCH (anna:Person {name:'Anna'}) CREATE (anna)-[:FRIEND]->(:Person:Expert {name:'Amanda'})-[:WORKED_WITH]->(neo)"
+}

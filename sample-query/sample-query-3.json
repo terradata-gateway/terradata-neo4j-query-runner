@@ -1,0 +1,3 @@
+{
+    "query": "MATCH (you:Person {name:'You'}) FOREACH (name in ['Johan','Rajesh','Anna','Julia','Andrew'] |   CREATE (you)-[:FRIEND]->(:Person {name:name}))"
+}

@@ -49,19 +49,11 @@ class QueryRunner {
 
         const session = driver.session();
         try {
-
-                                        
-            // console.log(data);
-            // console.log(data.query);
-            // console.log(data.params.name);
-            // const result = await session.run('MATCH p=()-->() RETURN p LIMIT 25');
             const result = await session.run(data.query);
 
-            console.log(result.records[0]);
-            //const singleRecord = result.records[0]
-            //const node = singleRecord.get(0)
-
-            //console.log(node.properties.name)
+            result.records.forEach(record => {
+                Log.info(JSON.stringify(record));              
+            });
         } catch (err) {
             console.log(err);
         }         

@@ -1,4 +1,4 @@
-const QueryRunner = require('./server/query-runner-server');
+const QueryRunner = require('./server/query-runner');
 const server = new QueryRunner();
 const Log = require('./lib/logger');
 const constants = require('./lib/constants');

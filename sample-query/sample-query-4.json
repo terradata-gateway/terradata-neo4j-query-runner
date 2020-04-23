@@ -1,0 +1,4 @@
+
+{
+    "query": "MATCH (you {name:'You'})-[:FRIEND]->(yourFriends) RETURN you, yourFriends"
+}
