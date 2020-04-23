@@ -1,0 +1,6 @@
+{
+	"query": "CREATE (a:Person {name: $name}) RETURN a",
+    "params": { 
+    	"name": "personName" 
+    }
+}

@@ -47,21 +47,25 @@ class QueryRunner {
 
     async query(data) {
 
-                            
-        console.log(data);
-        console.log(data.query);
-        console.log(data.params.name);
-
         const session = driver.session();
         try {
-            const result = await session.run('MATCH p=()-->() RETURN p LIMIT 25');
 
-            console.log(result.records);
+                                        
+            // console.log(data);
+            // console.log(data.query);
+            // console.log(data.params.name);
+            // const result = await session.run('MATCH p=()-->() RETURN p LIMIT 25');
+            const result = await session.run(data.query);
+
+            console.log(result.records[0]);
             //const singleRecord = result.records[0]
             //const node = singleRecord.get(0)
 
             //console.log(node.properties.name)
-        } finally {
+        } catch (err) {
+            console.log(err);
+        }         
+        finally {
             await session.close()
         }
     }
